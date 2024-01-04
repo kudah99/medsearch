@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z8t9%gamvsr-p8#2-gf%e3n^i+a57%*d=bhcys5b@ompp5cid7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app','medsearch.co.zw']
+ALLOWED_HOSTS = ['127.0.0.1','.vercel.app','medsearch.co.zw']
 
 
 # Application definition
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'app.app.urls'
+ROOT_URLCONF = 'app.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'app.app.wsgi.application'
+WSGI_APPLICATION = 'app.wsgi.application'
 
 
 # Database

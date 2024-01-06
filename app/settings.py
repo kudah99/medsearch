@@ -81,6 +81,9 @@ TEMPLATES = [
                     'django_components.template_loader.Loader',
                 ]
             )],
+        'builtins': [
+                'django_components.templatetags.component_tags',
+            ]
         },
     },
 ]
@@ -128,6 +131,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)

@@ -5,9 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
-django-tailwind = {extras = ["reload"], version = "*"}
 django-browser-reload = "*"
 django-components = "*"
+django-compressor = "*"
+django-tailwind = {extras = ["reload"], version = "*"}
 
 [dev-packages]
 

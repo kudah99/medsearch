@@ -1,15 +1,19 @@
-{% load static tailwind_tags %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>MedSearch - home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    {% tailwind_css %}
-  </head>
-
-  <body>
-   
-  </body>
-</html>
+{% extends 'skeleton.html' %} {% load i18n %} {% block base %}
+<div id="page" class="flex min-h-screen">
+  <div id="main" class="flex-grow">
+    <div
+      class="bg-radial from-gray-200 to-gray-50 dark:bg-gray-800 dark:from-gray-800 dark:to-gray-950/70"
+    >
+      <div
+        class="bg-grid from-gray-200/60 to-gray-transparent dark:from-gray-900 dark:to-transparent"
+      >
+        <div
+          class="bg-grid from-gray-200/60 to-gray-transparent dark:from-gray-900 dark:to-transparent"
+        >
+          {% block content %} {% block object-tools %}{% endblock %} {{ content }} {%endblock %} {% block footer %}{% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

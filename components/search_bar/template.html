@@ -1,0 +1,150 @@
+<div class="component-search_bar">
+  <div class="container mx-auto relative z-50">
+    <div
+      class="bg-white p-4 overflow-hidden outline outline-4 outline-gray-400/10 md:border md:rounded-lg dark:bg-gray-900 dark:text-gray-400 dark:border-gray-800 dark:outline-gray-700/50"
+      x-data="{ activeTab: 'specialist' }"
+    >
+      <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <ul
+          class="flex flex-wrap -mb-px text-sm font-medium text-center"
+          id="default-tab"
+          role="tablist"
+        >
+          <li class="me-2" role="presentation">
+            <button
+              @click="activeTab = 'specialist'"
+              class="inline-block p-4"
+              :class="{ 'border-b-2': activeTab === 'specialist', 'rounded-t-lg': activeTab === 'specialist' }"
+              id="specialist-tab"
+              role="tab"
+              aria-controls="specialist"
+              aria-selected="false"
+            >
+              Specialist type
+            </button>
+          </li>
+          <li class="me-2" role="presentation">
+            <button
+              @click="activeTab = 'health_condition'"
+              class="inline-block p-4"
+              :class="{ 'border-b-2': activeTab === 'health_condition', 'rounded-t-lg': activeTab === 'health_condition', 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300': activeTab !== 'health_condition' }"
+              id="health_condition-tab"
+              role="tab"
+              aria-controls="health_condition"
+              aria-selected="false"
+            >
+              health condition
+            </button>
+          </li>
+          <li class="me-2" role="presentation">
+            <button
+              @click="activeTab = 'doctor_name'"
+              class="inline-block p-4"
+              :class="{ 'border-b-2': activeTab === 'doctor_name', 'rounded-t-lg': activeTab === 'doctor_name', 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300': activeTab !== 'doctor_name' }"
+              id="doctor_name-tab"
+              role="tab"
+              aria-controls="doctor_name"
+              aria-selected="false"
+            >
+              doctor's name
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              @click="activeTab = 'health_facility'"
+              class="inline-block p-4"
+              :class="{ 'border-b-2': activeTab === 'health_facility', 'rounded-t-lg': activeTab === 'health_facility', 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300': activeTab !== 'health_facility' }"
+              id="health_facility-tab"
+              role="tab"
+              aria-controls="health_facility"
+              aria-selected="false"
+            >
+              health facility
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div
+          x-show="activeTab === 'specialist'"
+          class="flex items-center p-6 space-x-6 rounded-xl bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-xl transform hover:scale-105 transition duration-500"
+        >
+          <div class="relative w-full">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="specialist-search"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search specialist ,Physician, Dental Therapist  "
+              required
+            />
+          </div>
+          <div
+            class="flex py-3 px-4 rounded-lg text-gray-500 font-semibold cursor-pointer"
+          >
+            <span>your locations</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+          <a
+            class="bg-teal-900 border border-transparent flex flex-row font-medium group items-center px-5 py-2 rounded-md justify-center text-sm text-white w-full md:w-auto"
+          >
+            search
+            <i
+              class="material-symbols-outlined ml-2 relative right-0 text-lg transition-all group-hover:-right-1"
+              >arrow_forward</i
+            >
+          </a>
+        </div>
+        <div
+          x-show="activeTab === 'health_condition'"
+          class="flex items-center p-6 space-x-6 rounded-xl bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-xl transform hover:scale-105 transition duration-500"
+        >
+          {% comment %} health_condition search {% endcomment %}
+        </div>
+        <div
+          x-show="activeTab === 'doctor_name'"
+          class="flex items-center p-6 space-x-6 rounded-xl bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-xl transform hover:scale-105 transition duration-500"
+        >
+          {% comment %} doctor_name search_bar {% endcomment %}
+        </div>
+        <div
+          x-show="activeTab === 'health_facility'"
+          class="flex items-center p-6 space-x-6 rounded-xl bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-xl transform hover:scale-105 transition duration-500"
+        >
+          {% comment %} health_facility search_bar {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

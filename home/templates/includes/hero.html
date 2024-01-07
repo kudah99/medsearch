@@ -1,0 +1,28 @@
+<div class="container max-w-7xl mx-auto">
+  <div class="pt-32 pb-64 px-4">
+    <div class="flex flex-row max-auto justify-center"></div>
+
+    <h1
+      class="font-semibold leading-snug max-w-4xl mb-4 mx-auto text-2xl text-center text-gray-900 tracking-tight lg:leading-normal lg:text-4xl dark:text-white"
+    >
+      Find
+      <span
+        class="bg-clip-text text-teal-900 bg-gradient-to-r from-purple-800 to-purple-700 dark:from-purple-600 dark:to-purple-500"
+        >Doctors and health facilities</span
+      >
+      Near You
+    </h1>
+
+    <p
+      class="leading-loose mb-12 mx-auto max-w-3xl text-base text-center lg:leading-relaxed lg:text-xl"
+    >
+      You can find a specific doctor by entering their name and location, or
+      start your search by browsing recommended experts based on condition or
+      specialty.
+    </p>
+
+    <div class="flex flex-col gap-6 items-center justify-center md:flex-row">
+      {% component "search_bar" %}
+    </div>
+  </div>
+</div>

@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django_components',
     'django_components.safer_staticfiles',
-    'tailwind',
     'django_browser_reload',
 
     'home',

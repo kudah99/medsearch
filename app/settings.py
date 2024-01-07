@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django_components',
     'django_components.safer_staticfiles',
+    'whitenoise.runserver_nostatic',
     'tailwind',
     'django_browser_reload',
 
@@ -143,8 +144,8 @@ STATIC_URL = 'static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),os.path.join(BASE_DIR, "components")]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "components")]
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build', 'static')
 
 
 # for image upload

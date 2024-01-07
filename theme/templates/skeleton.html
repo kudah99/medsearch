@@ -10,22 +10,45 @@
 {% capture as nav_global silent %}{% block nav-global %}{% endblock %}{% endcapture %}
 {% capture as nav_global_side silent %}{% block nav-global-side %}{% endblock %}{% endcapture %}
 {% capture as actions_items silent %}{% block actions-items %}{% endblock %}{% endcapture %}
-
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:"rtl,ltr,auto" }}" x-data="{ adminTheme: $persist('auto').as('adminTheme') }" x-bind:class="{'dark': adminTheme === 'dark' || (adminTheme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)}" x-cloak>
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>MedSearch - Home</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="media/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/images/favicon-16x16.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link href="{% static "fonts/material-symbols/styles.css" %}" rel="stylesheet">
+    
     {% tailwind_css %}
     <style>
+        .bg-radial {
+            background-image: radial-gradient(ellipse 85% 60% at 50% -22%,var(--tw-gradient-from),var(--tw-gradient-to));
+        }
+        .bg-grid {
+            background-image: repeating-linear-gradient(90deg,var(--tw-gradient-from),var(--tw-gradient-from) 1px,var(--tw-gradient-to) 1px,var(--tw-gradient-to) 64px);
+        }
         .htmx-indicator{opacity:0;transition: opacity 200ms ease-in;}
         .htmx-request .htmx-indicator{opacity:1} 
         .htmx-request.htmx-indicator{opacity:1} 
+
+        html {                        
+            --color-primary-50: 250 245 255;                
+            --color-primary-100: 243 232 255;
+            --color-primary-200: 233 213 255;                
+            --color-primary-300: 216 180 254;                
+            --color-primary-400: 192 132 252;                
+            --color-primary-500: 168 85 247;                
+            --color-primary-600: 147 51 234;                
+            --color-primary-700: 126 34 206;                
+            --color-primary-800: 107 33 168;                
+            --color-primary-900: 88 28 135;
+        }
     </style>
 
     {% for style in styles %}
@@ -57,6 +80,9 @@
                         --color-{{ name }}-{{ weight }}: {{ value }};
                     {% endfor %}
                 {% endfor %}
+            }
+            .bg-grid {
+                background-image: repeating-linear-gradient(90deg,var(--tw-gradient-from),var(--tw-gradient-from) 1px,var(--tw-gradient-to) 1px,var(--tw-gradient-to) 64px);
             }
         </style>
     {% endif %}

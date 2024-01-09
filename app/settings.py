@@ -44,15 +44,22 @@ INSTALLED_APPS = [
     'django_components.safer_staticfiles',
     'tailwind',
     'django_browser_reload',
+    'import_export',
 
     'home',
     'theme'
 ]
 
 TAILWIND_APP_NAME = 'theme'
-TAILWIND_DEV_MODE = DEBUG
+TAILWIND_DEV_MODE = env('DEBUG')
 
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
+TAILWIND_CSS_PATH = 'css/dist/styles.css'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -9,7 +9,6 @@ class City(models.Model):
     def __str__(self):
         return self.name
     
-
 class Contact(models.Model):
     email = models.EmailField(max_length=100,null=True)
     phone_number = models.CharField(max_length=20, null=True)

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-z8t9%gamvsr-p8#2-gf%e3n^i+a57%*d=bhcys5b@ompp5cid7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app','medsearch.co.zw','.medsearch.co.zw','.now.sh']
 

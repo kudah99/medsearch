@@ -13,12 +13,9 @@ import os
 from pathlib import Path
 import environ
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
+env = environ.Env()
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Set the project base directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Take environment variables from .env file
@@ -30,6 +27,7 @@ DEBUG = env('DEBUG')
 # Raises Django's ImproperlyConfigured
 # exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
+
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app','medsearch.co.zw','.medsearch.co.zw','.now.sh']
 
@@ -102,9 +100,15 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST')
+        # 'OPTIONS': {
+        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        # }
     }
 }
 

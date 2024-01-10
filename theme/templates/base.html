@@ -1,13 +1,1 @@
-{% extends 'skeleton.html' %} {% load i18n %} {% block base %}
-  <div class="border-b -mb-32 dark:border-gray-800">
-    <div
-      class="bg-radial from-gray-200 to-gray-50 dark:bg-gray-800 dark:from-gray-800 dark:to-gray-950/70"
-    >
-      <div
-        class="bg-grid from-gray-200/60 to-gray-transparent dark:from-gray-900 dark:to-transparent"
-      >
-          {% block content %} {% block object-tools %}{% endblock %} {{ content }} {%endblock %} {% block footer %}{% endblock %}
-      </div>
-    </div>
-  </div>
-{% endblock %}
+{% extends 'skeleton.html' %} {% load i18n %} {% block base %} {% block content%} {% block object-tools %}{% endblock %} {{ content }} {%endblock %} {% block footer %}{% endblock %} {% endblock %}

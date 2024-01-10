@@ -17,7 +17,7 @@ class Contact(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"contact info"
+        return f"contact info {self.address}"
 
     
 class HealthFacilityCategory(models.Model):

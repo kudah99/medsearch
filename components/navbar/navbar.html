@@ -14,13 +14,14 @@
         </a>
       </div>
 
-      <nav class="hidden flex-row gap-12 ml-auto lg:flex">
+      <nav class="hidden flex-row gap-12 ml-auto lg:flex" x-data="{ currentRoute: '' }">
         <a
-          href="/#features"
+          href=""
           class="border-b border-gray-300 flex flex-grow flex-row group items-center leading-[18px] py-4 hover:text-purple-700 last:border-b-0 dark:border-gray-600 lg:border-0 lg:py-6"
         >
           <span
             class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white"
+            :class="{ 'font-bold': currentRoute === '' }"
           >
             home
           </span>
@@ -32,6 +33,7 @@
         >
           <span
             class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white"
+            :class="{ 'font-bold': currentRoute === 'about' }"
           >
             about
           </span>
@@ -43,6 +45,7 @@
         >
           <span
             class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white"
+            :class="{ 'font-bold': currentRoute === 'blog' }"
           >
             blog
           </span>
@@ -54,6 +57,7 @@
         >
           <span
             class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white"
+            :class="{ 'font-bold': currentRoute === 'contact' }"
           >
             contact
           </span>

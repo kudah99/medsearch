@@ -44,3 +44,27 @@ class HealthFacility(models.Model):
 
     def __str__(self):
         return self.name
+
+class MedicalSpecialty(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class HealthSpecialist(models.Model):
+    PROFESSIONAL_TITLES = (
+        ('MR', 'Mr.'),
+        ('MRS', 'Mrs.'),
+        ('MS', 'Ms.'),
+        ('DR', 'Dr.'),
+        ('PROF', 'Prof.')
+
+    )
+
+    full_name = models.CharField(max_length=50)
+    professional_title = models.CharField(max_length=4,choices=PROFESSIONAL_TITLES,default='MR')
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    medical_specialty = models.ForeignKey(MedicalSpecialty, on_delete=models.CASCADE)
+    contact_info = models.ForeignKey(Contact, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

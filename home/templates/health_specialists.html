@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+    <h2 class="text-2xl font-bold mb-4">Search Results</h2>
+    {% if results %}
+       <ul>
+          {% for specialist in results %}
+             <li>{{ specialist.full_name }} - {{ specialist.medical_specialty.name }} - {{ specialist.city.name }}</li>
+          {% endfor %}
+       </ul>
+    {% else %}
+    {% component "not_found" item="Health specialist" %} 
+    {% endif %}
+ </div>
+ {% endblock %}

@@ -1,10 +1,10 @@
 from django.db import models
+from django_resized import ResizedImageField
 
 class City(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
-
 
     def __str__(self):
         return self.name
@@ -26,7 +26,6 @@ class HealthFacilityCategory(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-
     def __str__(self):
         return self.name
 
@@ -41,13 +40,13 @@ class HealthFacility(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-
     def __str__(self):
         return self.name
 
 class MedicalSpecialty(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+    image = ResizedImageField(size=[500, 500], upload_to='medical_specialty_images/', null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

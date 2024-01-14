@@ -1,0 +1,36 @@
+<div class=" px-4 dark:border-gray-800">
+  <div class="container mx-auto max-w-7xl">
+    <div class="pb-18 pt-16 lg:pb-32">
+      <div
+        class="grid mb-8 border border-gray-200 rounded-lg dark:border-gray-700 md:mb-12 md:grid-cols-4"
+      >
+        {% for medical_specialty in medical_specialties %}
+        <figure
+          x-data="{ showCaption: false }"
+          @mouseenter="showCaption = true"
+          @mouseleave="showCaption = false"
+          class="flex flex-col hover:shadow-lg cursor-pointer items-center justify-center p-8 text-center border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:border-gray-700"
+        >
+          <blockquote
+            class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+          >
+            <h3 class="text-lg text-gray-900 dark:text-white">
+              {{ medical_specialty.name }}
+            </h3>
+          </blockquote>
+          <figcaption
+            x-show="showCaption"
+            class="flex items-center justify-right"
+          >
+          <button type="button" class="text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+            </button>
+          </figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

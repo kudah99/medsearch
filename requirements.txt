@@ -18,6 +18,8 @@ django-environ
 django-import-export
 django-resized
 django-tailwind
+djangorestframework==3.14.0
+heyoo==0.1.0
 et-xmlfile==1.1.0
 idna==3.6
 Jinja2==3.1.2

@@ -16,19 +16,19 @@
 
       <nav class="hidden flex-row gap-12 ml-auto lg:flex" x-data="{ currentRoute: '' }">
         <a
-          href=""
+          href="medical_specialist"
           class="border-b border-4 border-teal-500 flex flex-grow flex-row group items-center leading-[18px] py-4 hover:text-purple-700 last:border-b-0 dark:border-gray-600 lg:border-0 lg:py-6"
         >
           <span
             class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white "
             :class="{ 'font-bold': currentRoute === '' }"
           >
-            Find a doctor
+            Find medical specialist
           </span>
         </a>
 
         <a
-          href="/installation/"
+          href="/health_facility/"
           class="border-b border-gray-300 flex flex-grow flex-row group items-center leading-[18px] py-4 hover:text-purple-700 last:border-b-0 dark:border-gray-600 lg:border-0 lg:py-6"
         >
           <span
@@ -40,7 +40,7 @@
         </a>
 
         <a
-          href="/blog/"
+          href="/admin"
           class="border-b border-gray-300 flex flex-grow flex-row group items-center leading-[18px] py-4 hover:text-purple-700 last:border-b-0 dark:border-gray-600 lg:border-0 lg:py-6"
         >
           <span
@@ -120,14 +120,16 @@
         style="display: none"
       >
         <nav class="flex flex-col text-base w-full">
+
+
           <a
-            href="/#features"
+            href="/"
             class="border-b border-gray-300 flex flex-grow flex-row group items-center leading-[18px] py-4 hover:text-purple-700 last:border-b-0 dark:border-gray-600 lg:border-0 lg:py-6"
           >
             <span
               class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white"
             >
-              Features
+              Home
             </span>
 
             <span
@@ -137,13 +139,13 @@
           </a>
 
           <a
-            href="/installation/"
+            href="/medical_specialist"
             class="border-b border-gray-300 flex flex-grow flex-row group items-center leading-[18px] py-4 hover:text-purple-700 last:border-b-0 dark:border-gray-600 lg:border-0 lg:py-6"
           >
             <span
               class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white"
             >
-              Installation
+              Find a doctor
             </span>
 
             <span
@@ -153,13 +155,13 @@
           </a>
 
           <a
-            href="/blog/"
+            href="/health_facility"
             class="border-b border-gray-300 flex flex-grow flex-row group items-center leading-[18px] py-4 hover:text-purple-700 last:border-b-0 dark:border-gray-600 lg:border-0 lg:py-6"
           >
             <span
               class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white"
             >
-              Blog
+              Find a health facility
             </span>
 
             <span
@@ -169,13 +171,13 @@
           </a>
 
           <a
-            href="https://demo.unfoldadmin.com"
+            href="/admin"
             class="border-b border-gray-300 flex flex-grow flex-row group items-center leading-[18px] py-4 hover:text-purple-700 last:border-b-0 dark:border-gray-600 lg:border-0 lg:py-6"
           >
             <span
               class="text-gray-700 group-hover:text-purple-700 dark:text-gray-300 group-hover:dark:text-white"
             >
-              Try the demo
+              Login
             </span>
 
             <span
@@ -183,6 +185,7 @@
               >arrow_forward</span
             >
           </a>
+
         </nav>
       </div>
     </div>

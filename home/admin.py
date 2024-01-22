@@ -24,9 +24,8 @@ class HealthSpecialistResource(resources.ModelResource):
         model = HealthSpecialist
         
 class HealthSpecialistAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('full_name', 'professional_title', 'city', 'medical_specialty', 'contact_info', 'created_at', 'updated_at')
+    list_display = ('full_name','avatar' ,'professional_title', 'city', 'medical_specialty', 'contact_info', 'created_at', 'updated_at')
     search_fields = ('full_name', 'city__name', 'medical_specialty__name')
-
     resource_class = HealthSpecialistResource
 
 class MedicalSpecialtyResource(resources.ModelResource):

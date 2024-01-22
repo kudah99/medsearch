@@ -50,6 +50,9 @@ class MedicalSpecialty(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
+
 class HealthSpecialist(models.Model):
     PROFESSIONAL_TITLES = (
         ('MR', 'Mr.'),
@@ -61,9 +64,13 @@ class HealthSpecialist(models.Model):
     )
 
     full_name = models.CharField(max_length=50)
+    avatar = models.ImageField( upload_to='medical_specialists/', null=True,default='medical_specialists/doctor.png')
     professional_title = models.CharField(max_length=4,choices=PROFESSIONAL_TITLES,default='MR')
     city = models.ForeignKey(City, on_delete=models.CASCADE)
     medical_specialty = models.ForeignKey(MedicalSpecialty, on_delete=models.CASCADE)
     contact_info = models.ForeignKey(Contact, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.full_name

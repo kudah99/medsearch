@@ -9,15 +9,10 @@
       >
         {% component "navbar" %}
         <div class="container max-w-7xl mx-auto">
-            <div class="pt-24 pb-32 px-4">
+            <div class="pt-24 pb-32 px-4 mb-12">
               <div class="flex flex-row max-auto gap-4 justify-center">
                 <div class="relative w-full md:w-1/4">
-                    <select id="city" name="city" class="form-select w-full" required>
-                       <option selected disabled>Choose a location</option>
-                       {% for city in cities %}
-                          <option value="{{ city.id }}">{{ city.name }}</option>
-                       {% endfor %}
-                    </select>
+                    <p class="font-bold text-2xl">Filter search</p>
                  </div>
 
                  <div class="relative w-full md:w-1/4">
@@ -25,6 +20,14 @@
                        <option selected disabled>Choose a location</option>
                        {% for city in cities %}
                           <option value="{{ city.id }}">{{ city.name }}</option>
+                       {% endfor %}
+                    </select>
+                 </div>
+                 <div class="relative w-full md:w-1/4">
+                    <select id="city" name="city" class="form-select w-full" required>
+                       <option selected disabled>Choose a specialty</option>
+                       {% for medical_specialty in medical_specialties %}
+                          <option value="{{ medical_specialties.id }}">{{ medical_specialty.name }}</option>
                        {% endfor %}
                     </select>
                  </div>

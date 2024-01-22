@@ -32,6 +32,9 @@ def health_specialist(request):
     full_name = request.GET.get('full_name', default='')
     city_id = request.GET.get('city', default='')
     medical_specialty_id = request.GET.get('medical_specialty', default='')
+    cities = City.objects.all()
+    health_facilities  = HealthFacility.objects.all()
+    medical_specialties = MedicalSpecialty.objects.all()
 
     # Build a filter based on the query parameters
     filter_args = Q()
@@ -45,5 +48,5 @@ def health_specialist(request):
     # Apply the filter to the queryset
     health_specialists = HealthSpecialist.objects.filter(filter_args)
 
-    context = {'health_specialists': health_specialists}
+    context = {'health_specialists': health_specialists,'cities': cities,'health_facilities':health_facilities,'medical_specialties': medical_specialties}
     return render(request, 'health_specialist_list.html', context=context)
